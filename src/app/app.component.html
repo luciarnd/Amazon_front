@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav mx-lg-4 mx-md-0">
                 <li class="nav-item mx-3 my-md-1 my-sm-1">
-                    <a class="nav-link text-white p-0" href="">MIS PEDIDOS</a>
+                    <a class="nav-link text-white p-0" href="">PEDIDOS</a>
                 </li>
                 <li class="nav-item mx-3 my-md-1 my-sm-1">
                     <a class="nav-link text-white p-0" href="">SUBSCRIPCION</a>
@@ -17,22 +17,14 @@
                 </li>
             </ul>
             <ul class="navbar-nav mx-lg-4 mx-md-0">
-                <li class="nav-item mx-3 my-md-1 my-sm-1 my-2 pt-2">
-                    <a class="nav-link text-white pb-0 px-0" aria-current="page">Hola, </a>
+                <li class="nav-item mx-3 my-md-1 my-sm-1 my-1 pt-2">
+                  <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" href="" *ngIf="userLogged" (click)="loggout()">Cerrar sesion</a>
                 </li>
                 <li class="nav-item mx-3 my-md-1 my-sm-1 my-1 pt-2">
-                  <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" href="">Cerrar sesion</a>
+                    <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" routerLink="/login" *ngIf="!userLogged">Iniciar sesion</a>
                 </li>
                 <li class="nav-item mx-3 my-md-1 my-sm-1 my-1 pt-2">
-                    <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" href="">Iniciar sesion</a>
-                </li>
-                <li class="nav-item mx-3 my-md-1 my-sm-1 my-1 pt-2">
-                    <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" href="">Registro</a>
-                </li>
-                <li class="nav-item mx-3 my-md-1 my-sm-1 pt-2">
-                    <a class="nav-link text-white p-0 carrito" href="">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
+                    <a class="nav-link text-white pb-0 px-0 text-uppercase" aria-current="page" routerLink="/register" routerLinkActive="router-link-active" *ngIf="!userLogged">Registro</a>
                 </li>
             </ul>
         </div>
