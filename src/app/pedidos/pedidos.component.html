@@ -1,30 +1,30 @@
 
-<div class="container py-5" id="pedidos">
+<div class="container py-5" id="pedidos" *ngIf="">
   <h1>Pedidos</h1>
-  <div class="row">
+  <div class="row" *ngFor="let pedido of pedidos">
       <div class="col-12 mb-3">
           <div class="card w-100">
             <div class="card-body p-0">
               <h5 class="card-header row w-100 mx-0 pt-3">
                   <div class="col-6 pe-3">
                       <h6 class="text-uppercase">Pedido realizado el</h6>
-                      <p style="font-size: 13px;"></p>
+                      <p style="font-size: 13px;">{{pedido.fecha}}</p>
                   </div>
                   <div class="col-3 p-0">
                       <h6 class="text-uppercase">Total</h6>
-                      <p style="font-size: 13px;">€</p>
+                      <p style="font-size: 13px;">{{pedido.precio_total}}€</p>
                   </div>
                   <div class="col-3 p-0">
                       <h6 class="text-uppercase">Enviar a</h6>
-                      <p style="font-size: 13px;"></p>
+                      <p style="font-size: 13px;">{{pedido.personaReceptora}}</p>
                   </div>
               </h5>
-              <div class="row px-3">
+              <div class="row px-3" *ngFor="let producto of pedido.productos">
                   <div class="col-2">
-                      <img src="images/luz_led.jpg" class="p-2 w-100" alt="Luz led">
+                      <img src="http://localhost:8000/storage/{{producto.image}}" class="p-2 w-100" alt="{{producto.nombre}}">
                   </div>
                   <div class="col-6 ps-5 pt-4">
-                      <h5 class="card-title fw-bold text-info">Luz LED</h5>
+                      <h5 class="card-title fw-bold text-info">{{producto.nombre}}</h5>
                       <a href="#" class="btn btn-sm btn-primary mt-2">Comprar de nuevo</a>
                   </div>
                   <div class="col-4 py-3">

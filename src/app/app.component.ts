@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthStateService } from './shared/auth-state.service';
 import { TokenService } from './shared/token.service'
 import { Router } from '@angular/router';
+import { ProductoService } from './productos/producto.service';
+import { Producto } from './productos/producto';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +13,17 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit{
   title = 'frontend';
   userLogged: boolean = false;
+  productos: Producto[] = [];
 
-  constructor(private auth: AuthStateService, public token: TokenService, public router: Router) {}
+  constructor(private auth: AuthStateService, public token: TokenService, public router: Router, public productoService: ProductoService) {}
 
   ngOnInit() {
     this.auth.userAuthState.subscribe((val) => {
       this.userLogged = val;
+    })
+
+    this.productoService.index().subscribe((data: Producto[]) => {
+      this.productos = data;
     })
   }
 

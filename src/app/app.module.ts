@@ -13,6 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { ViewComponent } from './productos/view/view.component';
 import { EditComponent } from './productos/edit/edit.component';
+import { CreateComponent } from './productos/create/create.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { EditComponent } from './productos/edit/edit.component';
     PedidosComponent,
     ViewComponent,
     EditComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,

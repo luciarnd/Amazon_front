@@ -3,11 +3,13 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 // User interface
-export class User {
-name!: String;
-email!: String;
-password!: String;
-password_confirmation!: String;
+export interface User {
+name: string,
+email: string,
+password: string,
+password_confirmation: string,
+telefono: string,
+role_id: number
 }
 
 @Injectable({
