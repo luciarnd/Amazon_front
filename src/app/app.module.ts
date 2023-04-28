@@ -10,6 +10,9 @@ import { AuthInterceptor } from './shared/auth-interceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { ViewComponent } from './productos/view/view.component';
+import { EditComponent } from './productos/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { SignupComponent } from './components/signup/signup.component';
     InicioComponent,
     SigninComponent,
     SignupComponent,
+    PedidosComponent,
+    ViewComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
