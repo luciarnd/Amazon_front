@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.auth.userAuthState.subscribe((val) => {
       this.userLogged = val;
+      console.log(this.userLogged)
     })
 
     this.productoService.index().subscribe((data: Producto[]) => {

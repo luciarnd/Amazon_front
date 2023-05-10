@@ -11,9 +11,9 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', component: InicioComponent},
   {path: 'login', component: SigninComponent},
   {path: 'register', component: SignupComponent},
-  {path: 'producto/view', component:ViewComponent},
+  {path: 'producto/view/:id', component:ViewComponent},
   {path: 'pedidos', component: PedidosComponent},
-  {path: 'producto/edit', component: EditComponent},
+  {path: 'producto/edit/:id', component: EditComponent},
 ];
 
 @NgModule({

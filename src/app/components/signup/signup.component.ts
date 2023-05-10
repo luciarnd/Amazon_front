@@ -22,6 +22,8 @@ errors: any = null;
       email: [''],
       password: [''],
       password_confirmation: [''],
+      telefono: [''],
+      apellido: ['']
   });
 }
 

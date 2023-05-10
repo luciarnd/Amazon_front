@@ -1,16 +1,25 @@
 <div class="container py-5">
   <div class="row">
       <div class="col-4">
-          <img src="" alt="imagen de producto" class="h-100 w-100">
+          <img src="http://localhost:8000/storage/{{producto.image}}" alt="imagen de producto" class="h-100 w-100">
       </div>
       <div class="col-7 ps-5">
-          <h4 class="text-info"></h4>
-          <p>Marca: </p>
+          <h4 class="text-info">{{producto.nombre}}</h4>
+          <p>Marca: {{producto.marca}}</p>
           <hr>
-          <h3>€</h3>
+          <h3>{{producto.precio}}€</h3>
           <p class="text-success">En stock</p>
           <a href="" class="btn btn-primary mt-3 px-5" style="border-radius: 20px">Comprar ahora</a>
           <a href="" class="btn btn-primary mt-3 px-5 mx-2 text-white" style="border-radius: 20px; background-color: #c27400">Añadir a la cesta</a>
+          <div class="dropdown d-inline" *ngIf="loggedUser?.role_id == 1">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-bars mt-3" style="font-size: 1.5rem;"></i>
+            </button>
+            <div class="dropdown-menu" aria-bs-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" routerLink="/producto/edit/{{producto.id}}">Editar</a>
+              <a class="dropdown-item" (click)="borrarProducto(producto.id)">Borrar</a>
+            </div>
+          </div>
       </div>
   </div>
 </div>

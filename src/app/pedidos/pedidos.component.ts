@@ -17,23 +17,19 @@ export class PedidosComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.getLoggedUser()
-
-    if(this.loggedUser.role_id == 1) {
-      this.pedidosService.index().subscribe((data: Pedido[]) => {
-        this.pedidos = data
-      })
-    } else {
-      this.pedidosService.indexMine().subscribe((data: Pedido[]) => {
-        this.pedidos = data
-      })
-    }
-  }
-
-  getLoggedUser() {
     this.authService.profileUser().subscribe((data) => {
-      this.loggedUser = data;
+      this.loggedUser = data
+      console.log(this.loggedUser)
+      if(this.loggedUser.role_id == 1) {
+        this.pedidosService.index().subscribe((data: any) => {
+          this.pedidos = data
+        })
+      } else {
+        this.pedidosService.indexMine().subscribe((data: any) => {
+          this.pedidos = data
+          console.log(this.pedidos)
+        })
+      }
     })
   }
-
 }

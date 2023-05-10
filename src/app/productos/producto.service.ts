@@ -12,22 +12,22 @@ export class ProductoService {
   constructor(private http: HttpClient) { }
 
   index(): any {
-    this.http.get(`${this.apiUrl}/productos`)
+    return this.http.get(`${this.apiUrl}/productos`)
   }
 
-  edit(producto: Producto) {
-    this.http.put(`${this.apiUrl}/producto/${producto.id}`, producto)
+  edit(id: number, producto: Producto) {
+    return this.http.put(`${this.apiUrl}/producto/${id}`, producto)
   }
 
   delete(id:number) {
-    this.http.delete(`${this.apiUrl}/producto/${id}`)
+    return this.http.delete(`${this.apiUrl}/producto/${id}`)
   }
 
   find(id: number) {
-    this.http.get(`${this.apiUrl}/producto/${id}`)
+    return this.http.get(`${this.apiUrl}/producto/${id}`)
   }
 
   create(producto: Producto) {
-    this.http.post(`${this.apiUrl}/producto`, producto)
+    return this.http.post(`${this.apiUrl}/producto`, producto)
   }
 }
