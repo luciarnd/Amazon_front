@@ -6,6 +6,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ViewComponent } from './productos/view/view.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { EditComponent } from './productos/edit/edit.component';
+import { CreateComponent } from './productos/create/create.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: InicioComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'producto/view/:id', component:ViewComponent},
   {path: 'pedidos', component: PedidosComponent},
   {path: 'producto/edit/:id', component: EditComponent},
+  {path: 'producto/add', component: CreateComponent}
 ];
 
 @NgModule({

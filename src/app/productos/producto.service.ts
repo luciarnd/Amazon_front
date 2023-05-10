@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Producto } from './producto';
 
@@ -27,7 +27,13 @@ export class ProductoService {
     return this.http.get(`${this.apiUrl}/producto/${id}`)
   }
 
-  create(producto: Producto) {
-    return this.http.post(`${this.apiUrl}/producto`, producto)
+  create(producto: FormData) {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    
+    return this.http.post(`${this.apiUrl}/producto`, producto, {
+      headers: headers
+    })
   }
 }
